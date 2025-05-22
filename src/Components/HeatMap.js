@@ -75,7 +75,7 @@ const HeatMap = ({ data }) => {
       },
     },
     title: {
-      text: "Velocidade do Vento por Data e Hora",
+      text: "Heatmap de Velocidade do Vento",
       align: "left",
       x: 40,
     },

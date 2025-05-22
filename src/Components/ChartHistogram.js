@@ -35,7 +35,7 @@ function ChartHistogram({ data }) {
 
     const options = {
         title: {
-            text: 'Highcharts Histogram'
+            text: 'Histograma da Velocidade do Vento',
         },
 
         xAxis: [{

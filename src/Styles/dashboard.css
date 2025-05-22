@@ -61,3 +61,24 @@
     border: blue solid 1px;
     /* background: linear-gradient(90deg, rgba(90,111,214,1) 0%, rgba(135,163,255,0.7987570028011204) 18%); */
 }
+
+.btn-analise {
+    background: linear-gradient(90deg, #0742e6 60%, #00bfff 100%);
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 14px 38px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(7, 66, 230, 0.13);
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    margin-top: 8px;
+    letter-spacing: 0.5px;
+}
+
+.btn-analise:hover {
+    background: linear-gradient(90deg, #0742e6 80%, #00bfff 100%);
+    box-shadow: 0 4px 24px rgba(7, 66, 230, 0.18);
+    transform: translateY(-2px) scale(1.03);
+}

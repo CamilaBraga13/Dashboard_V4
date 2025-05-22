@@ -1,23 +1,23 @@
-import React, { useEffect , useState } from 'react';
-import './App.css';
-import TableCsv from './Components/TableCsv';
-import CSVReader from './Components/CSVReader'
+// import React, { useEffect , useState } from 'react';
+// import './App.css';
+// import TableCsv from './Components/TableCsv';
+// import CSVReader from './Components/CSVReader'
+
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CSVReader from "./Components/CSVReader";
+import Analise from "./Components/Analise"; // Importe o componente Analise
+
 
 function App() {
   return (
-    <div>
-      {/* <div>
-        <h1>
-          Dashboard
-        </h1>
-      </div> */}
-      <div>
-        {/* <TableCsv />  */}
-        <CSVReader /> 
-      </div>  
-    </div>
-  )
-
+    <Router>
+      <Routes>
+        <Route path="/" element={<CSVReader />} />
+        <Route path="/analise" element={<Analise />} /> {/* Define a rota para a página Analise */}
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

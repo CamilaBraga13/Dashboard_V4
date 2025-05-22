@@ -30,18 +30,22 @@ function Chart({ data }) {
             zoomType: 'x',
         },
         title: {
-            text: "Série Temporal -> Direção",
+            text: " ",
         },
         colors: ['#0ad13c'],
-        // xAxis: {
-        //     type: 'datetime', // Define o eixo X como um eixo de tempo
-        //     title: {
-        //         text: 'Data', // Título do eixo X
-        //     },
-        //     dateTimeLabelFormats: {
-        //         day: '%d/%m/%Y', // Formato para exibir apenas a data
-        //     },
-        // },
+        xAxis: {
+            type: 'datetime', // Define o eixo X como um eixo de tempo
+            title: {
+                text: 'Data', // Título do eixo X
+            },
+            dateTimeLabelFormats: {
+                //day: '%d/%m/%Y', // Formato para exibir apenas a data
+                hour: '%[HM]',
+                    day: '%[eb]',
+                    month: '%[bY]',
+                    year: '%Y'
+            },
+        },
         yAxis: {
             title: {
                 text: 'Direction',
@@ -54,7 +58,8 @@ function Chart({ data }) {
     };
 
     return (
-        <div>
+        <div className='return'>
+            <h2>Série Temporal da Direção do Vento</h2>
             {chartData.length > 0 ? ( // Verifica se o CSV não está vazio (errado)
                 <HighchartsReact highcharts={Highcharts} options={options} /> // True
             ) : (

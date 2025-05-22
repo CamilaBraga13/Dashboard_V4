@@ -9,6 +9,10 @@ import HeatMap from './HeatMap';
 import ChartHistogram from "./ChartHistogram";
 import SpiralChart from "./SpiralChart"
 import SerieSuavizada from "./SerieSuavizada";
+import StickPlot from "./StickPlot";
+
+import { Link } from "react-router-dom"; // Importe o Link do React Router
+
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -195,24 +199,83 @@ export default function CSVReader() {
           <div className="general-container">
             <div className="chart-container">
               <div className="chart-line">
-                <SerieSpeed data={displayedData} />
+                <StickPlot />
               </div>
-              <div className="chart-line">
+              {/* <div className="chart-line">
                 <SerieSuavizada data={respostaApi} />
               </div>
               <div className="chart-line">
                 <SerieDirection data={displayedData} />
               </div>
               <div className="chart-top">
-                <div className="wind-rose">
-                  <WindRose data={displayedData} />
-                </div>
                 <div className="chart-column">
                   <HeatMap data={displayedData} />
                 </div>
                 <div className="new-chart">
                   <ChartHistogram data={displayedData} />
                 </div>
+              </div>
+                            <div className="chart-top">
+                <div className="wind-rose">
+                  <WindRose data={displayedData} />
+                </div>
+                <div className="chart-column">
+                  <SpiralChart data={displayedData} />
+                </div>
+              </div> */}
+              <div >
+                {/* <Link
+                  to={{
+                    pathname: "/analise",
+                  }}
+                  state={{ csvData }} // Passa os dados como estado
+                  target="_blank" // Abre em uma nova aba
+                  style={{ textDecoration: "none", color: "white" }} // Estilo do link
+                  rel="noopener noreferrer" // Segurança ao abrir em nova aba
+                >
+                  <button>Analise</button>
+                </Link> */}
+                {/* <button
+                  onClick={() => {
+                    localStorage.setItem("csvData", JSON.stringify(csvData));
+                    window.open("/analise", "_blank");
+                  }}
+                >
+                  Analise
+                </button> */}
+                <div style={{ marginTop: "24px", textAlign: "center" }}>
+                  <div style={{ marginBottom: "8px", fontSize: "1.08rem", color: "#0742e6", fontWeight: 500 }}>
+                    Clique para abrir a análise detalhada dos dados em uma nova aba.
+                  </div>
+                  <button
+                    className="btn-analise"
+                    onClick={() => {
+                      localStorage.setItem("csvData", JSON.stringify(csvData));
+                      window.open("/analise", "_blank");
+                    }}
+                  >
+                    Análise
+                  </button>
+                </div>
+                {/* <a
+                  href={`/analise?data=${encodeURIComponent(JSON.stringify(csvData))}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  <button>Analise</button>
+                </a> */}
+                {/* <a
+                  href="/analise"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    localStorage.setItem("csvData", JSON.stringify(csvData));
+                  }}
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  <button>Analise</button>
+                </a> */}
               </div>
             </div>
           </div>
